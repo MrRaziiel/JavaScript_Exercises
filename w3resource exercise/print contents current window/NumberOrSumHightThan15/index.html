@@ -1,0 +1,67 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <p id ="Higher"></p>
+    </body>
+    <script>
+
+      const gnum = prompt('Write one number');
+      const gnum2 = prompt('Write another number');
+
+      num1 = parseInt(gnum);
+      num2 = parseInt(gnum2);
+
+      var som = num1 + num2;
+      var dif = Math.abs(num1 - num2);
+      writeText = HigherThan15(som, dif);
+      document.getElementById("Higher").innerHTML = writeText;
+
+
+
+      function HigherThan15(som, dif)
+      {
+        var textToShow = "";
+        var textSumHigher = "";
+        var textDifHigher = "";
+        var text = (num1 == 15)? num1: (num2 == 15)? numb2 : "";
+        if (text != "")
+        {
+            textToShow = "The number " + text + "is higher than 15";
+        }
+
+        if (som > 15 && dif > 15) textSumHigher = "The sum and fic of the 2 numbers is higher than 15";
+        else
+        {
+            if(som > 15) textSumHigher = "The sum of the 2 numbers is higher than 15"; else textSumHigher = "";
+            if(dif > 15) textDifHigher = "The dif of the 2 numbers is higher than 15"; else textDifHigher = "";
+        }
+
+        return textToShow.concat(textSumHigher, textSumHigher, textDifHigher);
+    }
+
+
+
+
+
+
+    //     if (som === 15 && num2 === 15)
+    //   {
+    //     let textNumHigher = "The sum is Higher than 15 : " + som;
+    //     textToShow.concat(" ", textNumHigher)
+    //   }
+    //   else
+    //   {
+    //     var aux;
+    //     aux = (num1 > 15)? num1 : (num2 > 15)? num2 : null;
+    //     console.log(typeof aux);
+    //     if (aux != null) wNumber = "The number " + aux + " is higher than 15";
+    //     else wNumber = "Non of the numbers is higher than 15 neither the sum";
+    //   }
+    //   return wNumber
+    //   }
+
+
+    </script>
+</html>

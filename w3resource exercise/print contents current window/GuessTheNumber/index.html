@@ -1,0 +1,51 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <p>Guess a number</p>
+        <input type="number" id= "GuessNumber">
+        <button id="btnGuessNumber" onclick="CompareNumbers()" value="Submit">Enter your guess</button>
+        <button id="btnRestart" onclick="RestartBtn()" value="Restart">Restart</button>
+        <p id="mostrarErro"></p>
+    </body>
+    <script>
+
+        // var randomNumber = Math.floor((Math.random()*10)+1);
+        var randomNumber;
+
+        var flagRestart = false;
+        function RestartBtn()
+        {
+            RandomNumber();
+            randomNumber = Math.floor((Math.random()*10)+1);
+            document.getElementById("GuessNumber").value = null
+            document.getElementById("mostrarErro").innerHTML = null
+
+            flagRestart = true;
+        }
+
+        function CompareNumbers(){
+            
+            RandomNumber();
+            var guessNumber = document.getElementById("GuessNumber").value;
+            
+            var validGuess = (guessNumber == randomNumber)? "Acertaste!" : " Erraste, o numero era " + randomNumber;
+            
+            console.log(validGuess)
+
+            document.getElementById("mostrarErro").innerHTML = validGuess
+            flagRestart = false;
+            
+
+        }
+
+        function RandomNumber()
+        {
+            if (!flagRestart) 
+            {
+                randomNumber = Math.floor((Math.random()*10)+1);
+            }
+        }
+
+    </script>
+</html>

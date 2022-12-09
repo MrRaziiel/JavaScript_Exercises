@@ -1,0 +1,30 @@
+<html>
+    <head>     
+    </head>
+    <body>
+        <p>Give a String</p>
+        <input type="text" name="given-string" id="givenString">
+        <p>Give a index</p>
+
+        <input type="number" name="given-index" id="givenIndex">
+        <p id="mostrarString"> </p>
+        <button id="btnRestart" onclick="remove_char()" value="enter">enter</button>
+
+    </body>
+    <script>
+       
+        
+
+
+        function remove_char()
+        {  
+            var givenString = document.getElementById("givenString").value;
+            var givenIndex = document.getElementById("givenIndex").value;
+            newString = givenString.substring(0,givenIndex-1) + givenString.substring(givenIndex, givenString.lenght);
+            document.getElementById("mostrarString").innerHTML = newString;
+            document.getElementById("mostrarString").style.color = "red";
+            document.getElementById("mostrarString").style.fontFamily = "cursive";
+
+        }
+    </script>
+</html>
